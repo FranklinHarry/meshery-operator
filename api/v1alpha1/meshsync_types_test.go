@@ -127,5 +127,10 @@ var _ = Describe("The test case for the meshsync CRDs", func() {
 			err := k8sClient.Delete(context, meshSync)
 			Expect(err).NotTo(HaveOccurred())
 		})
+		It("Delete meshery namespace", func() {
+
+			err := k8sClient.Delete(context, ns)
+			Expect(err).NotTo(HaveOccurred())
+		})
 	})
 })
